@@ -1,4 +1,4 @@
 package homework.day2.playground.essence.creatures;
 
-public class Vegetable extends Plant{
+public abstract class Vegetable extends Plant{
 }
