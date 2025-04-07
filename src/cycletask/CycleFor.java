@@ -1,4 +1,4 @@
-package CycleTask;
+package cycletask;
 
 public class CycleFor {
     public void cycleFor() {
@@ -6,7 +6,6 @@ public class CycleFor {
             if (i % 2 == 1) {
                 System.out.print(i + " ");
             }
-
         }
     }
 }

@@ -1,4 +1,4 @@
-package CycleTask;
+package cycletask;
 
 import java.util.Random;
 

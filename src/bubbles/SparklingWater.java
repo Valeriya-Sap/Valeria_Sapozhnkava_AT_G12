@@ -12,9 +12,7 @@ public class SparklingWater extends Water {
     public void degas() {
         for (int i = 0; i < bubbles.length; i++) {
             bubbles[i].burstBubble();
+            bubbles[i] = null;
         }
-        Bubble[] emptybubbles = new Bubble[0];
-        this.bubbles = emptybubbles;
-
     }
 }

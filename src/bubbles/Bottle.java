@@ -6,9 +6,11 @@ public class Bottle {
 
     public Bottle(double volume) {
         this.volume = volume;
-    }
-
-    public Bottle() {
+        Bubble[] numberOfBubbles = new Bubble[(int) (volume * 10)];
+        for (int i = 0; i < numberOfBubbles.length; i++) {
+            numberOfBubbles[i] = new Bubble();
+        }
+        sparkling.pump(numberOfBubbles);
     }
 
     public double getVolume() {
@@ -19,18 +21,7 @@ public class Bottle {
         this.volume = volume;
     }
 
-
-    public void fill() {
-        Bubble[] numberOfBubbles = new Bubble[(int) (volume * 10000)];
-        for (int i = 0; i < numberOfBubbles.length; i++) {
-            numberOfBubbles[i] = new Bubble();
-        }
-        sparkling.pump(numberOfBubbles);
-    }
-
     public void open() {
         sparkling.degas();
     }
-
-
 }

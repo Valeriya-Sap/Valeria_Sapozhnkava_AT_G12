@@ -5,15 +5,14 @@ public class Bubble {
     private String gasComposition;
 
     public Bubble() {
-
-    }
-
-    public void burstBubble() {
-        System.out.println("Cramp!");
     }
 
     public Bubble(String gasComposition) {
         this.gasComposition = gasComposition;
+    }
+
+    public void burstBubble() {
+        System.out.println("Cramp!");
     }
 
     public String getGasComposition() {
