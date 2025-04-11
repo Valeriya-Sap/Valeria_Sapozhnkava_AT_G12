@@ -19,4 +19,9 @@ public abstract class Vehicle extends Matter implements Transportable, Runnable 
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void run() {
+
+    }
 }

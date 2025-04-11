@@ -1,7 +1,7 @@
 package homework.day2.playground.essence.creatures;
 
 public abstract class Insect extends Animal{
-    public Insect(String name, int mass) {
+    public Insect(int mass, String name) {
         super(name, mass);
     }
     public void eat(Insect food) {
