@@ -31,9 +31,9 @@ public class TransportableProcessorRunner {
         Flyable flyableCopter = new Copter(223, "AW109 Flyable");
         Flyable flyablePlane = new Plane(3452, "Airbus a380 Flyable");
         Flyable flyableRocket = new Rocket(7623, "Soyuz-FG Flyable");
-        //Rideable rideableCar = new Car(23, "Tesla X Rideable"); - этот интерфейс не привязан к данному классу;
-        // Rideable rideableMoped = new Moped(12, "Honda EM1 Rideable"); - этот интерфейс не привязан к данному классу;
-        //Rideable rideableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Rideable"); - этот интерфейс не привязан к данному классу;
+        Rideable rideableCar = new Car(23, "Tesla X Rideable");
+        Rideable rideableMoped = new Moped(12, "Honda EM1 Rideable");
+        Rideable rideableMotorbike = new Motorbike(12, "Suzuki GSX-R1000 Rideable");
         Copter aCopter = new Copter(223, "AW109 Copter");
         Plane aPlane = new Plane(3452, "Airbus a380 Plane");
         Rocket aRocket = new Rocket(7623, "Soyuz-FG Rocket");

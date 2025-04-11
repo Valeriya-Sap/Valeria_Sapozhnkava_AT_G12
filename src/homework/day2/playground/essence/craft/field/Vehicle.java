@@ -1,12 +1,13 @@
 package homework.day2.playground.essence.craft.field;
 
 import homework.day2.playground.essence.Matter;
+import homework.day2.playground.essence.craft.Rideable;
 import homework.day2.playground.essence.craft.Transportable;
 
-public abstract class Vehicle extends Matter implements Transportable, Runnable {
+public abstract class Vehicle extends Matter implements Transportable, Runnable, Rideable {
     protected String name;
 
-    public Vehicle(String name, int mass) {
+    public Vehicle(int mass, String name) {
         super(mass);
         this.name = name;
 
@@ -22,12 +23,16 @@ public abstract class Vehicle extends Matter implements Transportable, Runnable 
 
     @Override
     public void run() {
-
     }
 
     @Override
     public int move(int pointA, int pointB) {
         System.out.println(String.format("I am %s, my name is %s and I am moving from point %d to point %d", this.getClass(), this.name, pointA, pointB));
         return pointB-pointA;
+    }
+
+    @Override
+    public void drive(String direction){
+        System.out.println(String.format("I am %s, my name is %s and I amd driving to %s", this.getClass(), this.name, direction));
     }
 }
