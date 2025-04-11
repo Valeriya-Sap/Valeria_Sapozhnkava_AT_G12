@@ -2,7 +2,7 @@ package homework.day2.playground.essence.creatures;
 
 public class Beetle extends Insect implements Crawlable {
     public Beetle(String name, int mass) {
-        super(name, mass);
+        super(mass, name);
     }
 
     public void nest(Carrot home) {
