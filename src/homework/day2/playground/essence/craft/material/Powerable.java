@@ -1,4 +1,4 @@
 package homework.day2.playground.essence.craft.material;
 
-public class Diesel implements Pourable, Powerable{
+public interface Powerable {
 }

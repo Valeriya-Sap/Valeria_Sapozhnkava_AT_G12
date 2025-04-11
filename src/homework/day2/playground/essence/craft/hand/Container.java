@@ -8,7 +8,6 @@ public abstract class Container extends Matter {
     public Container(String name, int mass) {
         super(mass);
         this.name = name;
-
     }
 
     public String getName() {
