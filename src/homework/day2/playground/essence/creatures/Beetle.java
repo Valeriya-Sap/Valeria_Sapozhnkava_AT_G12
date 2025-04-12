@@ -1,7 +1,7 @@
 package homework.day2.playground.essence.creatures;
 
 public class Beetle extends Insect implements Crawlable {
-    public Beetle(String name, int mass) {
+    public Beetle(int mass, String name) {
         super(mass, name);
     }
 
@@ -11,5 +11,14 @@ public class Beetle extends Insect implements Crawlable {
         } else {
             System.out.println("This carrot is too small for nesting :( ");
         }
+
+
+    }
+
+    @Override
+    public void crawl(String direction, int distance) {
+        System.out.println(String.format("I am %s, my name is %s and I am crawling to %s for %d units", this.getClass(), this.name, direction, distance));
+        System.out.println("vz-vz-vzz-zz..");
+
     }
 }

@@ -28,11 +28,11 @@ public abstract class Vehicle extends Matter implements Transportable, Runnable,
     @Override
     public int move(int pointA, int pointB) {
         System.out.println(String.format("I am %s, my name is %s and I am moving from point %d to point %d", this.getClass(), this.name, pointA, pointB));
-        return pointB-pointA;
+        return pointB - pointA;
     }
 
     @Override
-    public void drive(String direction){
+    public void drive(String direction) {
         System.out.println(String.format("I am %s, my name is %s and I amd driving to %s", this.getClass(), this.name, direction));
     }
 }
