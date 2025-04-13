@@ -11,7 +11,7 @@ import homework.day2.playground.essence.creatures.Mosquito;
 import homework.day2.playground.processors.FlyableProcessor;
 
 public class FlyableProcessorRunner {
-    public static void main(String [] arg){
+    public static void main(String[] arg) {
         FlyableProcessor flyableProcessor = new FlyableProcessor();
         Flyable flyableCopter = new Copter(223, "Mi8 Flyable");
         Flyable flyablePlane = new Plane(3452, "Boeing 837 Flyable");

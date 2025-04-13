@@ -8,7 +8,6 @@ public abstract class Plant extends Matter {
     public Plant(String name, int mass) {
         super(mass);
         this.name = name;
-
     }
 
     public String getName() {

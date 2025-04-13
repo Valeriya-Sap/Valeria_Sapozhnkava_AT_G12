@@ -17,7 +17,7 @@ public class Beetle extends Insect implements Crawlable {
 
     @Override
     public void crawl(String direction, int distance) {
-        System.out.println(String.format("I am %s, my name is %s and I am crawling to %s for %d units", this.getClass(), this.name, direction, distance));
+        System.out.println(String.format("I am %s, my name is %s and I am crawling to %s for %d units", this.getClass().getSimpleName(), this.name, direction, distance));
         System.out.println("vz-vz-vzz-zz..");
 
     }

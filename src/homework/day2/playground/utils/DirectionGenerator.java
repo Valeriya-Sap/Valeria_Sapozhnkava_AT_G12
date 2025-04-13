@@ -5,7 +5,7 @@ import java.util.Random;
 public class DirectionGenerator {
     public static String generateDirection() {
         Random random = new Random();
-        int n = random.nextInt(1,40);
+        int n = random.nextInt(1, 40);
         if (n <= 9) {
             return "NORTH";
         } else if (n <= 19) {
