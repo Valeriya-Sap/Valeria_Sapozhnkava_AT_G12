@@ -9,6 +9,6 @@ public class Maylily extends Flower implements Serializable {
 
     @Override
     public String toString() {
-        return "EssenceObject{name='" + name + "', mass=" + mass + "}";
+        return "MaylilyObject{name='" + name + "', mass=" + mass + "}";
     }
 }
