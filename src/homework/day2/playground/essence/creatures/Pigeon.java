@@ -1,7 +1,7 @@
 package homework.day2.playground.essence.creatures;
 
 public class Pigeon extends Vertebrata {
-    public Pigeon(String name, int mass) {
+    public Pigeon(int mass, String name) {
         super(mass, name);
     }
 }
