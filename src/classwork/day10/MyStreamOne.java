@@ -1,6 +1,7 @@
 package classwork.day10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class MyStreamOne {
@@ -22,5 +23,22 @@ public class MyStreamOne {
         System.out.println(list.stream().skip(2).limit(2).toList());
 
         System.out.println(list.stream().distinct().filter(t -> t.contains("м")).toList());
+//--------------------------------------------------------------------------------------------------------
+        System.out.println(list.stream().anyMatch("мама"::equals));
+
+        System.out.println(list.stream().allMatch("м"::contains));
+
+        System.out.println(list.stream().map(string -> string + "м").toList());
+
+        System.out.println(list.stream().flatMap(string -> Arrays.stream(string.split("а"))).filter
+                (x -> !x.isEmpty()).toList());
+//--------------------------------------------------------------------------------------------------------
+
+        System.out.println(list.stream().sorted().toList());
+
+        System.out.println(list.stream().sorted(Comparator.reverseOrder()).distinct().toList());
+
+        System.out.println(list.stream().flatMap(string -> Arrays.stream(string.split(""))).peek(p-> System.out.println(p)).max(String::compareTo).get());
+
     }
 }
