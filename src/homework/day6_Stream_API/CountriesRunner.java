@@ -11,8 +11,8 @@ public class CountriesRunner {
 //Добавить к каждому названию кавычки
 //Отпечатать в консоль с новой строки
         Stream.of("Андора", "Португалия", "Англия", "Замбия").
-                  filter(s-> s.matches(".*[уеыаоэяиюёУЕЫАОЭЯИЮЁ].*")).
-        filter(s -> s.length() < 7).map(s -> s.toUpperCase()).map(string -> "\"" + string + "\"").
-                forEach(s -> System.out.println(s));
+                filter(s -> s.matches(".*[уеыаоэяиюёУЕЫАОЭЯИЮЁ].*")).
+                filter(s -> s.length() < 7).map(s -> s.toUpperCase()).map(string -> "\"" + string + "\"")
+                .forEach(s -> System.out.println(s));
     }
 }

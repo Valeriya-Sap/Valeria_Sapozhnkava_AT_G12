@@ -13,9 +13,9 @@ public class BirdsRunner {
 //Разбить на новые строки по букве "б"
 //Отпечатать в консоль с новой строки в виде --Чайка--
 
-        birds.stream().map(s -> s.replace("о", "а")).map(s -> s.toLowerCase()).
-                map(s -> s.replace("ь", "")).
-                flatMap(string -> Arrays.stream(string.split("б"))).
-                forEach(s -> System.out.println("--" + s + "--"));
+        birds.stream().map(s -> s.replace("о", "а")).map(s -> s.toLowerCase())
+                .map(s -> s.replace("ь", ""))
+                .flatMap(string -> Arrays.stream(string.split("б")))
+                .forEach(s -> System.out.println("--" + s + "--"));
     }
 }
