@@ -1,6 +1,5 @@
 package homework.day6_Stream_API;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
