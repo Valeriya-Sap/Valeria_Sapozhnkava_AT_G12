@@ -26,7 +26,9 @@ public class MyCountries {
 
         int numbersS = 0;
         for (String country : countries) {
-            numbersS = numbersS + country.length();
+            if (country.length() < 7) {
+                numbersS ++;
+            }
         }
         System.out.println();
         System.out.println(numbersS);

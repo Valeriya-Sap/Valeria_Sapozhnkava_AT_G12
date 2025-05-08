@@ -7,7 +7,7 @@ public class MuFigures {
     public static void main(String[] args) {
         //Создать список строк стрингов figures из 5 фигур (Овал, Прямоугольник, Круг, Квадрат, Эллипс) через (Arrays.asList())
 
-        List<String> figures = Arrays.asList("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс");
+            List<String> figures = Arrays.asList("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс");
 
         //Проитерировать список через for-each и отпечатать слова в файл figures через тире
 
