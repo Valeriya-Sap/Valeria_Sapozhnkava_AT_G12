@@ -23,9 +23,9 @@ public class DoublesRunner {
                 .flatMap(n -> {
                     List<Bubble> bubbleList = new ArrayList<>();
                     for (int i = 0; i < n; i++) {
-                       bubbleList.add(new Bubble(n, "Bubble vol-" + n));
+                        bubbleList.add(new Bubble(n, "Bubble vol-" + n));
                     }
                     return bubbleList.stream();
-                }).peek(System.out::println).mapToInt(n->n.getVolume()).sum());
+                }).peek(System.out::println).mapToInt(n -> n.getVolume()).sum());
     }
 }
