@@ -10,8 +10,8 @@ public class FiguresRunner {
 //        Отфильтровать числа, которые больше 4
 //        Отпечатать все оставшиеся числа в консоль
 
-        List<String> figures = Stream.of("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс").toList();
-        System.out.println(figures.stream().map(string -> string.length()).filter(length -> length > 4)
-                .toList());
+       Stream.of("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс")
+                .map(string -> string.length()).filter(length -> length > 4)
+                .forEach(System.out:: println);
     }
 }

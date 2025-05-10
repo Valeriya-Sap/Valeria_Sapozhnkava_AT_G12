@@ -8,7 +8,7 @@ public class MyName {
         List<String> names = new ArrayList<>();
         names.add("Оля");
         names.add("Коля");
-        names.add("Аня");
+        names.add("Оля");
         names.add("Миша");
         names.add("Даша");
 

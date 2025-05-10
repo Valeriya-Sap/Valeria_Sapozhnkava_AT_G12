@@ -25,7 +25,8 @@ public class PersonRunner {
         // на 4 года больше исходного
         //Вычислить средний возраст конечного людей и отпечатать в новый текстовый файл
 
-        Double averageAge = people.filter(n -> n.getAge() < 60).sorted((p1, p2) -> p1.getName().compareTo(p2.getName())).peek(System.out::println)
+        Double averageAge = people.filter(n -> n.getAge() < 60)
+                .sorted((p1, p2) -> p1.getName().compareTo(p2.getName())).peek(System.out::println)
                 .map(n -> new Person(n.getAge() + 4, n.getName()))
                 .mapToInt(n -> n.getAge()).average().getAsDouble();
 
