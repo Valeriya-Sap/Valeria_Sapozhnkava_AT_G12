@@ -3,7 +3,7 @@ package homework.day5_Lists;
 import java.util.Arrays;
 import java.util.List;
 
-public class MyFigures {
+public class MuFigures {
     public static void main(String[] args) {
         //Создать список строк стрингов figures из 5 фигур (Овал, Прямоугольник, Круг, Квадрат, Эллипс) через (Arrays.asList())
 
