@@ -5,7 +5,7 @@ import homework.lists_classes.Bubble;
 import java.util.Arrays;
 import java.util.List;
 
-public class MyBubbl {
+public class MyBubbles {
     public static void main(String[] args) {
 //        Создать список пузырей (класса Bubble) bubbles из 3 пузырьков с объемами (2, 4, 5) и именами (CO2, O2, CO)
 //        соответственно, через (Arrays.asList())
@@ -13,7 +13,7 @@ public class MyBubbl {
         List<Bubble> bubbles = Arrays.asList(
                 new Bubble(2, "CO2"),
                 new Bubble(4, "O2"),
-                new Bubble(5, "C")
+                new Bubble(5, "CO")
         );
 
 //        Проитерировать список через for-each и отпечатать объемы в консоль через пробел
