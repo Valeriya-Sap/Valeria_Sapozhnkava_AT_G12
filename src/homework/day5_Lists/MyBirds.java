@@ -27,7 +27,7 @@ public class MyBirds {
         Pattern x = Pattern.compile("[уеыаоэяиюёУЕЫАОЭЯИЮЁ]");
 
         for (String bird : birds) {
-            if (x.matcher(bird).results().count()>1){
+            if (x.matcher(bird).results().count() > 1) {
                 numberB++;
             }
         }
