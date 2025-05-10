@@ -1,8 +1,6 @@
 package homework.day5_Lists;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,13 +20,12 @@ public class MyCars {
         //Проитерировать список через for-each и отпечатать слова в файл cars через с новой строки в кавычках
 
 
-        try (FileOutputStream fos = new FileOutputStream("cars.tmp");
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+        try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("cars.tmp"),
+                "UTF-8"))) {
             for (String car : cars) {
-                oos.writeChars("\"" + car + "\"" + "\n");
+                out.write("\"" + car + "\"" + "\n");
             }
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             System.out.println("There is some exception!");
         }
 
