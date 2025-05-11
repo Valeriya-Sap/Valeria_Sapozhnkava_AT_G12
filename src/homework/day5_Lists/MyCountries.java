@@ -17,9 +17,13 @@ public class MyCountries {
         countries.add("Замбия");
 
         //Проитерировать список через for-each и отпечатать слова в консоль через запятую с пробелом
-
+        boolean first = true;
         for (String country : countries) {
-            System.out.print(country + ", ");
+            if (!first){
+                System.out.print(", ");
+            }
+            System.out.print(country);
+            first = false;
         }
 
         //Посчитать сколько стран, в названии которых меньше 7 букв и вывести число в консоль
@@ -27,7 +31,7 @@ public class MyCountries {
         int numbersS = 0;
         for (String country : countries) {
             if (country.length() < 7) {
-                numbersS ++;
+                numbersS++;
             }
         }
         System.out.println();
