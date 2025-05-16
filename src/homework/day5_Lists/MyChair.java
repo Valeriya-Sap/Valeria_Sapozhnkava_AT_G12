@@ -21,9 +21,8 @@ public class MyChair {
 
 //        Проитерировать список через for-each и отпечатать произведение высоты на ширину в консоль через пробел
 
-        int mult = 0;
         for (Chair chair : furniture) {
-            System.out.print((mult = chair.getHeight() * chair.getWidth()) + " ");
+            System.out.print((chair.getHeight() * chair.getWidth()) + " ");
         }
 
 //        Создать пустую карту, где ключом является целое число, а значением объект стула

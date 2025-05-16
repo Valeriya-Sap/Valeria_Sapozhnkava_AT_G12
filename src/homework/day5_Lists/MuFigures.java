@@ -1,7 +1,11 @@
 package homework.day5_Lists;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class MuFigures {
     public static void main(String[] args) {
@@ -11,8 +15,12 @@ public class MuFigures {
 
         //Проитерировать список через for-each и отпечатать слова в файл figures через тире
 
-        for (String figure : figures) {
-            System.out.print(figure + " - ");
+        try (BufferedWriter out = new BufferedWriter(new FileWriter("figures.tmp"))) {
+            for (String figure : figures) {
+                out.write(figure + "-");
+            }
+        } catch (IOException e) {
+            System.out.println("There is some exception!");
         }
 
         //Посчитать сколько фигур НЕ содержат букву "и" и вывести число в консоль

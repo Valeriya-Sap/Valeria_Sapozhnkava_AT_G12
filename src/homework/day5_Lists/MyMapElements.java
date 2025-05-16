@@ -16,12 +16,12 @@ public class MyMapElements {
 //        равными порядку их добавления в коллекцию, начиная с 1-цы
         int i = 1;
         elements.put(i, "Silicon");
-        elements.put(i++, "Sulfur");
-        elements.put(i++, "Argon");
-        elements.put(i++, "Calcium");
-        elements.put(i++, "Chromium");
-        elements.put(i++, "Iron");
-        elements.put(i++, "Zinc");
+        elements.put(++i, "Sulfur");
+        elements.put(++i, "Argon");
+        elements.put(++i, "Calcium");
+        elements.put(++i, "Chromium");
+        elements.put(++i, "Iron");
+        elements.put(++i, "Zinc");
 
 //        Проитерировать коллекцию через for-each и отпечатать название элементов в консоль через пробел
 
