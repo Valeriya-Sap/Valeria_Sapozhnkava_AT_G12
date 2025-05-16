@@ -1,6 +1,5 @@
 package homework.day6_Stream_API;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 public class FiguresRunner {
@@ -10,7 +9,7 @@ public class FiguresRunner {
 //        Отфильтровать числа, которые больше 4
 //        Отпечатать все оставшиеся числа в консоль
 
-       Stream.of("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс")
+        Stream.of("Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс")
                 .map(string -> string.length()).filter(length -> length > 4)
                 .forEach(System.out:: println);
     }

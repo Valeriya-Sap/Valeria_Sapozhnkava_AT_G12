@@ -20,17 +20,14 @@ public class WaterRunner {
         Stream<Water> waters = Stream.of(
                 new Water("Прозрачная", "Нет"),
                 new Water("Прозрачная", "Нет"),
-                new Water("Мутная", "Аммиачный")
+                new Water("Мутная", "Аммиачный"),
+                new Water("Синяя", "Мятный")
         );
 
-        System.out.println(waters.filter(n -> !n.getColor().equals("Прозрачная")).sorted((p1, p2) -> p2.getSmell()
-                .compareTo(p1.getSmell())).map(n -> {
-            if (n.getSmell().contains("ы")) {
-                return new Water(n.getColor(), n.getSmell().replace("ы", "ыы"));
-            } else {
-                return n;
-            }
-        }).map(n -> n.getSmell()).reduce("", (s1, s2) -> s1 + s2).length());
+        System.out.println(waters.filter(n -> !n.getColor().equals("Прозрачная"))
+                .sorted((p1, p2) -> p2.getSmell().compareTo(p1.getSmell()))
+                .map(w -> new Water(w.getColor(), w.getSmell().replace("ы", "ыы")))
+                .map(n -> n.getSmell()).reduce("", (s1, s2) -> s1 + s2).length());
 
     }
 }

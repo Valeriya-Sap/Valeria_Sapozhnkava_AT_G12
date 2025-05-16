@@ -1,5 +1,6 @@
 package homework.day5_Lists;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +19,14 @@ public class MyCars {
 
         //Проитерировать список через for-each и отпечатать слова в файл cars через с новой строки в кавычках
 
-        for (String car : cars) {
-            System.out.println("\"" + car + "\"");
+
+        try (BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("cars.tmp"),
+                "UTF-8"))) {
+            for (String car : cars) {
+                out.write("\"" + car + "\"" + "\n");
+            }
+        } catch (IOException e) {
+            System.out.println("There is some exception!");
         }
 
         //Найти и удалить из набора авто, в названии которых больше 4 букв
