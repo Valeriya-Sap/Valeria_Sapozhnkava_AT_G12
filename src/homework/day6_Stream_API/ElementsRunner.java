@@ -1,7 +1,6 @@
 package homework.day6_Stream_API;
 
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.stream.Stream;
 
 public class ElementsRunner {
@@ -16,11 +15,10 @@ public class ElementsRunner {
                 .flatMap(string -> Arrays.stream(string.split(" ")))
                 .map(s -> {
                     if (s.length() % 2 == 0) {
-                        Integer n = s.length();
-                        return n.toString();
+                        return String.valueOf(s.length());
                     } else {
                         return s.replace("e", "o");
                     }
-                }).toList().stream().distinct().forEach(s -> System.out.println(s));
+                }).distinct().forEach(s -> System.out.println(s));
     }
 }
