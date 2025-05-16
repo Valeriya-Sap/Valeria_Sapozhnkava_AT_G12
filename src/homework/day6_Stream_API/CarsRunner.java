@@ -14,8 +14,8 @@ public class CarsRunner {
 //Все названия привести в верхний регистр
 //Отпечатать все названия в консоль с новой строки
 
-        System.out.println(Stream.of("Мерс", "Ауди", "Жигуль", "Рено", "Жигуль", "Жигуль", "Ауди").
-                distinct().filter(string -> string.contains("и")).skip(1).map(string -> string.toUpperCase()).toList());
+        System.out.println(Stream.of("Мерс", "Ауди", "Жигуль", "Рено", "Жигуль", "Жигуль", "Ауди")
+                .distinct().filter(string -> string.contains("и")).skip(1).map(string -> string.toUpperCase()).toList());
 
     }
 }
