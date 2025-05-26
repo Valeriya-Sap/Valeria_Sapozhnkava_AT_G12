@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNGSuite">
+    <test name="AllTestNGTests">
+        <packages>
+            <package name="day14_week"/>
+            <package name="homework.unitTests.people"/>
+        </packages>
+    </test>
+</suite>
