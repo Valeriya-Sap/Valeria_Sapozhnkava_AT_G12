@@ -8,7 +8,7 @@ public class WeatherMinsk {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("https://google.com");
-        driver.findElement(By.xpath("//div[text()='Принять все']/..")).click();
+        //driver.findElement(By.xpath("//div[text()='Принять все']/..")).click();
         driver.findElement(By.name ("q")).sendKeys("погода минск");
         Thread.sleep(500L);
         driver.findElement(By.xpath("//ul[@role='listbox']/li[1]")).click();

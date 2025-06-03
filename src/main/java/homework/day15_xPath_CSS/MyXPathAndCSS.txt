@@ -1,0 +1,118 @@
+//spartak.by -----------------------------------------------------------------------------------
+--Информация для партнеров--
+
+//a[@class='has_child']/span[text()='Информация для партнеров'];
+ul li:nth-child(3) a[class] span;
+
+--Лого спартак--
+
+//a[@class='header_logo_img']/img
+.header_logo_img img
+
+--Элемент "Импрессо"<Каталог продукции--
+
+//ul[@class='menu full']//a[@href='/products/Impresso/'];
+.main-nav a[href^='/products/Impresso/'];
+
+--Иконка лупы--
+
+//i[@class='search fa search-btn lupa'];
+.search.fa.search-btn.lupa;
+
+--Иконка глаза--
+
+//img[@src='/include/eye.svg'];
+img[src='/include/eye.svg'];
+
+--Ru--
+
+//a[text()='Ru'];
+div.header__lang a[href='/'];
+
+--Ch--
+
+//a[text()='Ch'];
+a[href^='/cn/'];
+
+--Скачать каталог--
+
+//a[@class='download-catalog'];
+.download-catalog
+
+--Элемент стрелка вправо >--
+
+//a[@class='flex-next'];
+.flex-next;
+
+--Элемент слайдера - второй --
+
+//ol/li[last()-1];
+ol li:nth-child(2);
+
+--Элемент VK.com--
+
+//header//img[@src='/bitrix/templates/our_shop/images/VK.svg'];
+header img[src='/bitrix/templates/our_shop/images/VK.svg'];
+
+--Элемент Youtube--
+
+//header//img[@src='/bitrix/templates/our_shop/images/youtube.svg'];
+header img[src='/bitrix/templates/our_shop/images/youtube.svg'];
+
+
+//mail.ru-------------------------------------------------------------------------------------------------
+
+--Лого mail.ru--
+
+//img[@class='ph-logo__img svelte-qsd904'];
+img.ph-logo__img.svelte-qsd904 ;
+
+--Кнопка "Создать"-- ОТСУТСТВУЕТ
+--Таба "mail.ru"-- ОТСУТСТВУЕТ
+--Таба "Облако"--
+
+//a[text()='Облако']
+nav ul li:nth-child(3) a
+
+--Линка "Регистрация"--
+
+//a[text()='Регистрация'];
+div.ph-project-margin a;
+
+--Маленькая кнопка "Войти"--
+
+//div[@class='headline']//button[text()='Войти'];
+div.headline button[data-click-counter='66843940, 61021872'];
+
+--Иконка "Лупа"-- ОТСУТСТВУЕТ
+--Кнопка "Найти"--
+
+//button[text()='Найти'];
+button[data-testid];
+
+--Таба "Леди"--
+
+//a[@href='//lady.mail.ru/'];
+a[href='//lady.mail.ru/'];
+
+--Ссылка на первую новость--
+
+//div[@class='news-main__title milbmng__sf1i84']/p;
+div.news-main__title.milbmng__sf1i84 p;
+
+--Лика "Почта"-- ОТСУТСТВУЕТ
+--Большая кнопка "Войти"--
+
+//div[@id='mailbox']//button[text()='Войти'];
+button.resplash-btn;
+
+--Линка "Создать почту"--
+
+//a[text()='Создать почту'];
+a.resplash-btn;
+
+--Линка "Подробнее"-- ОТСУТСТВУЕТ
+--Иконка погоды--
+
+//a[@class='weather__current milbmng__gzml55'];
+a.weather__current.milbmng__gzml55;
