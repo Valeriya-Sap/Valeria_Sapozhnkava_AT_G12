@@ -1,10 +1,10 @@
-package pages;
+package pages.booking;
 
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class VoidPOBooking {
+public class VoidPOBookingSearch {
     WebDriver driver = Driver.getWebDriver();
 
     private String search = "ss";

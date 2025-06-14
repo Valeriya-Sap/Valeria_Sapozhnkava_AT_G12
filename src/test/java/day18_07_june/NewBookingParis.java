@@ -4,11 +4,9 @@ import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.VoidPOBooking;
+import pages.booking.VoidPOBookingSearch;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -20,18 +18,16 @@ public class NewBookingParis {
     public static void main(String[] args) {
         WebDriver driver = Driver.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        VoidPOBooking booking = new VoidPOBooking();
+        VoidPOBookingSearch booking = new VoidPOBookingSearch();
         // Перейти на сайт
         driver.get("https://booking.com");
 
         // Нажать кнопку "Принять" файлы cookie
         booking.acceptCookies();
-        //driver.findElement(By.xpath("//button[text()='Принять']")).click();
 
         // Выбрать город "Париж"
         booking.enterCity("Париж");
-       // driver.findElement(By.name("ss")).sendKeys("Париж");
-
+       
         // Установить даты заезда
         driver.findElement(By.xpath("//span[@data-testid='date-display-field-start']")).click();
 

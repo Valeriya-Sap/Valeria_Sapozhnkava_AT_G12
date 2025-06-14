@@ -3,11 +3,9 @@ package day18_07_june;
 import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.VoidPOBooking;
+import pages.booking.VoidPOBookingSearch;
 
 import java.time.Duration;
 
@@ -17,7 +15,7 @@ public class NewBookingPraga {
     public static void main(String[] args) {
         WebDriver driver = Driver.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        VoidPOBooking booking = new VoidPOBooking();
+        VoidPOBookingSearch booking = new VoidPOBookingSearch();
 
 //        1. Перейти на сайт booking.com
         driver.get("https://booking.com");

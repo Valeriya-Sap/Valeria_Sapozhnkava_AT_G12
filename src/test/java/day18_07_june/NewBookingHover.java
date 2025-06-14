@@ -4,12 +4,10 @@ import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.VoidPOBooking;
+import pages.booking.VoidPOBookingSearch;
 
 import java.time.Duration;
 
@@ -19,7 +17,7 @@ public class NewBookingHover {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = Driver.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        VoidPOBooking booking = new VoidPOBooking();
+        VoidPOBookingSearch booking = new VoidPOBookingSearch();
 
 // 1. Перейти на сайт https://booking.com
         driver.get("https://booking.com");
