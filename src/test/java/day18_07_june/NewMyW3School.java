@@ -36,7 +36,7 @@ public class NewMyW3School {
                 .perform();
 
 //        4. Перейти на сайт https://google.com
-        WebDriver driver2 = new ChromeDriver(options);
+        WebDriver driver2 = new ChromeDriver();
         driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver2.get("https://google.com");
         driver2.findElement(By.xpath("//div[text()='Принять все']/..")).click();

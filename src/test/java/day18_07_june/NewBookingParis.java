@@ -27,7 +27,7 @@ public class NewBookingParis {
 
         // Выбрать город "Париж"
         booking.enterCity("Париж");
-       
+
         // Установить даты заезда
         driver.findElement(By.xpath("//span[@data-testid='date-display-field-start']")).click();
 
