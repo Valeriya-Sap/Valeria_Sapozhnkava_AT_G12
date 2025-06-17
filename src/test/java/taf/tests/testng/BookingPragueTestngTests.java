@@ -1,14 +1,13 @@
-package taf.tests.junit;
+package taf.tests.testng;
 
 import org.junit.Test;
 import taf.pages.booking.VoidPOBookingHotelPage;
 import taf.pages.booking.VoidPOBookingResultsPage;
 import taf.pages.booking.VoidPOBookingSearchPage;
 
+import static org.testng.Assert.assertTrue;
 
-import static org.junit.Assert.assertTrue;
-
-public class BookingPragueTests {
+public class BookingPragueTestngTests {
     @Test
     public void testPrague() {
         VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();

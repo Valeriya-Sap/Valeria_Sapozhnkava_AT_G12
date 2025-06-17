@@ -1,6 +1,9 @@
 package taf.pages.booking;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import taf.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +23,9 @@ public class VoidPOBookingSearchPage {
     private static String ROOMS_XPATH = "//label[@for='no_rooms']/../following-sibling::div/button[2]";
     private static String SUBMIT_BUTTON_XPATH = "//button[@type = 'submit']";
     private static String HIDE_BUTTON_XPATH = "//button[@aria-label = 'Скрыть меню входа в аккаунт.']";
+    private static String CURRENCY_PICKER_XPATH = "//button[@data-testid='header-currency-picker-trigger']";
+    private static String LANGUAGE_PICKER_XPATH = "//button[@data-testid='header-language-picker-trigger']";
+    private static String TOOLTIP_XPATH = "//body/div[last()]/div";
 
     public VoidPOBookingSearchPage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -70,6 +76,42 @@ public class VoidPOBookingSearchPage {
 
     public void refuseLogIn() {
         driver.findElement(By.xpath(HIDE_BUTTON_XPATH)).click();
+    }
+
+    public String getCurrencyTooltipValue() {
+        WebElement currencyIcon = driver.findElement(By.xpath(CURRENCY_PICKER_XPATH));
+        Actions make = new Actions(driver);
+        make.moveToElement(currencyIcon).perform();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        String tooltipValue = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TOOLTIP_XPATH)))
+                .getText();
+
+        make.moveToLocation(0, 0).perform();
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(TOOLTIP_XPATH)));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return tooltipValue;
+    }
+
+    public String getLanguageTooltipValue() {
+        WebElement currencyIcon = driver.findElement(By.xpath(LANGUAGE_PICKER_XPATH));
+        Actions make = new Actions(driver);
+        make.moveToElement(currencyIcon).perform();
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        String tooltipValue = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TOOLTIP_XPATH)))
+                .getText();
+
+        make.moveToLocation(0, 0).perform();
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(TOOLTIP_XPATH)));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return tooltipValue;
     }
 
 }
