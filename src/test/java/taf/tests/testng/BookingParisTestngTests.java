@@ -1,14 +1,15 @@
-package taf.tests.junit;
+package taf.tests.testng;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import taf.pages.booking.VoidPOBookingResultsPage;
 import taf.pages.booking.VoidPOBookingSearchPage;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class BookingParisTests {
+
+public class BookingParisTestngTests {
     @Test
     public void testParis() {
         VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();

@@ -18,9 +18,12 @@ public class VoidPOBookingHotelPage {
     }
 
     public double getHotelRating() {
-        String score = driver.findElement(By.xpath(RATING_XPATH))
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        String score = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(RATING_XPATH)))
                 .getText();
-        double number = Double.parseDouble(score);
+        double number = Double.parseDouble(score.replace(",", "."));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return number;
     }
 }

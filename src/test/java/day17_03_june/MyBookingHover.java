@@ -27,6 +27,9 @@ public class MyBookingHover {
 // Нажать кнопку "Принять" файлы cookie
         driver.findElement(By.xpath("//button[text()='Принять']")).click();
 
+// Отказаться входить в аккаунт
+        driver.findElement(By.xpath("//button[@aria-label = 'Скрыть меню входа в аккаунт.']")).click();
+
 // 2. Навести мышь на индикатор валюты
         WebElement currencyIcon = driver.findElement(By.xpath("//button[@data-testid='header-currency-picker-trigger']"));
         Actions make = new Actions(driver);
