@@ -25,6 +25,9 @@ public class MyBookingPraga {
         // Нажать кнопку "Принять" файлы cookie
         driver.findElement(By.xpath("//button[text()='Принять']")).click();
 
+        // Отказаться входить в аккаунт
+        driver.findElement(By.xpath("//button[@aria-label = 'Скрыть меню входа в аккаунт.']")).click();
+
 //        2. Ввести в поиск «Прага», выбрать для проживания 2 гостей и 1 номер.
         driver.findElement(By.name("ss")).sendKeys("Прага");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
@@ -34,8 +37,7 @@ public class MyBookingPraga {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.xpath("//button[@type = 'submit']")).click();
 
-        // Отказаться входить в аккаунт
-        driver.findElement(By.xpath("//button[@aria-label = 'Скрыть меню входа в аккаунт.']")).click();
+
 
 //        3. Отфильтровать отели с максимальным рейтингом
         driver.findElement(By.xpath("//div[text()='Превосходно: 9+']")).click();
@@ -46,6 +48,8 @@ public class MyBookingPraga {
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(By.xpath("//div[@role='listitem'][1]//div[@data-testid='title']")))
                 .click();
+        Object[] windowHandles = driver.getWindowHandles().toArray();
+        driver.switchTo().window((String) windowHandles[1]);
         String score = driver.findElement(By.xpath("//div[@data-testid='review-score-right-component']/div[2]"))
                 .getText();
         double number = Double.parseDouble(score);
