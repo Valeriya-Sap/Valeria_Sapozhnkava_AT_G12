@@ -1,7 +1,6 @@
 package homework.taf.tests.junit;
 
 import homework.taf.base.postcondition.JUnitPostcondition;
-import homework.taf.base.precondition.JUnitPrecondition;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import homework.taf.pages.w3school.GoogleSearchPage;
