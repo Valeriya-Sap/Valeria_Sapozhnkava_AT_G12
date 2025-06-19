@@ -65,6 +65,12 @@
             <version>8.4.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>7.9.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
