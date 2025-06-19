@@ -1,12 +1,13 @@
 package homework.taf.tests.testng;
 
+import homework.taf.base.postcondition.TestNGPostcondition;
 import org.testng.annotations.Test;
-import homework.taf.pages.demoqa.VoidPODemoQAPage;
+import homework.taf.pages.demoqa.DemoQAPage;
 
-public class DemoQATestngTests {
+public class DemoQATestngTests extends TestNGPostcondition {
     @Test
     public void testDemoQA() {
-        VoidPODemoQAPage mainPage = new VoidPODemoQAPage();
+        DemoQAPage mainPage = new DemoQAPage();
         mainPage.openDemoQA();
         mainPage.selectOption();
         mainPage.selectTitle();

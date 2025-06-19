@@ -1,16 +1,18 @@
 package homework.taf.tests.testng;
 
-import org.junit.Test;
-import homework.taf.pages.booking.VoidPOBookingHotelPage;
-import homework.taf.pages.booking.VoidPOBookingResultsPage;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.base.postcondition.TestNGPostcondition;
+
+import homework.taf.pages.booking.BookingHotelPage;
+import homework.taf.pages.booking.BookingResultsPage;
+import homework.taf.pages.booking.BookingSearchPage;
+import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class BookingPragueTestngTests {
+public class BookingPragueTestngTests extends TestNGPostcondition {
     @Test
     public void testPrague() {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();
@@ -19,11 +21,11 @@ public class BookingPragueTestngTests {
         searchPage.enterRoomNumber(1);
         searchPage.clickSubmit();
 
-        VoidPOBookingResultsPage resultsPage = new VoidPOBookingResultsPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
 
         resultsPage.filterByNinePlus();
         resultsPage.openFirstHotel();
-        VoidPOBookingHotelPage hotelPage = new VoidPOBookingHotelPage();
+        BookingHotelPage hotelPage = new BookingHotelPage();
         double actualRate = hotelPage.getHotelRating();
         double expectedRate = 9;
         assertTrue(actualRate >= expectedRate);

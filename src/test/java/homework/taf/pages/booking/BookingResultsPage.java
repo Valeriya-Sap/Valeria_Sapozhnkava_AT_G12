@@ -7,7 +7,7 @@ import homework.taf.driver.Driver;
 
 import java.time.Duration;
 
-public class VoidPOBookingResultsPage {
+public class BookingResultsPage {
     WebDriver driver = Driver.getDriver();
 
     private static String HIDE_BUTTON_XPATH = "//button[@aria-label = 'Скрыть меню входа в аккаунт.']";
@@ -19,8 +19,8 @@ public class VoidPOBookingResultsPage {
     private static String FIRST_HOTEL_TITLE_XPATH = "//div[@role='listitem'][1]//div[@data-testid='title']";
     private static String TENTH_HOTEL_XPATH = "//div[@role='listitem'][10]";
 
-    public VoidPOBookingResultsPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public BookingResultsPage() {
+
     }
 
     public void refuseLogIn() {
@@ -40,7 +40,7 @@ public class VoidPOBookingResultsPage {
         driver.findElement(By.xpath(RATING_NINE_PLUS_XPATH)).click();
     }
 
-    public String getFirstHotelRating () {
+    public String getFirstHotelRating() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         String firstHotelRating = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FIRST_HOTEL_RATING_XPATH)))
@@ -49,7 +49,7 @@ public class VoidPOBookingResultsPage {
         return firstHotelRating;
     }
 
-    public void openFirstHotel () {
+    public void openFirstHotel() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(FIRST_HOTEL_TITLE_XPATH)))
@@ -70,10 +70,10 @@ public class VoidPOBookingResultsPage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-     public void beautifyPage(){
-         WebElement tenHotel = driver.findElement(By.xpath(TENTH_HOTEL_XPATH));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].style.backgroundColor = 'green';", tenHotel);
-    WebElement hotelTitle = tenHotel.findElement(By.cssSelector("div[data-testid='title']"));
+    public void beautifyPage() {
+        WebElement tenHotel = driver.findElement(By.xpath(TENTH_HOTEL_XPATH));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].style.backgroundColor = 'green';", tenHotel);
+        WebElement hotelTitle = tenHotel.findElement(By.cssSelector("div[data-testid='title']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.color = 'red';", hotelTitle);
     }
 

@@ -1,17 +1,19 @@
 package homework.taf.tests.junit;
 
+import homework.taf.base.postcondition.JUnitPostcondition;
+import homework.taf.base.precondition.JUnitPrecondition;
 import org.junit.Test;
-import homework.taf.pages.booking.VoidPOBookingHotelPage;
-import homework.taf.pages.booking.VoidPOBookingResultsPage;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.pages.booking.BookingHotelPage;
+import homework.taf.pages.booking.BookingResultsPage;
+import homework.taf.pages.booking.BookingSearchPage;
 
 
 import static org.junit.Assert.assertTrue;
 
-public class BookingPragueTests {
+public class BookingPragueTests extends JUnitPostcondition {
     @Test
     public void testPrague() {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();
@@ -20,11 +22,11 @@ public class BookingPragueTests {
         searchPage.enterRoomNumber(1);
         searchPage.clickSubmit();
 
-        VoidPOBookingResultsPage resultsPage = new VoidPOBookingResultsPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
 
         resultsPage.filterByNinePlus();
         resultsPage.openFirstHotel();
-        VoidPOBookingHotelPage hotelPage = new VoidPOBookingHotelPage();
+        BookingHotelPage hotelPage = new BookingHotelPage();
         double actualRate = hotelPage.getHotelRating();
         double expectedRate = 9;
         assertTrue(actualRate >= expectedRate);

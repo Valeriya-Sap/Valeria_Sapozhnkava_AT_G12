@@ -9,14 +9,13 @@ import homework.taf.driver.Driver;
 
 import java.time.Duration;
 
-public class VoidPOW3SchoolPage {
+public class W3SchoolPage {
     WebDriver driver = Driver.getDriver();
 
     private static String ACCEPT_COOKIES_XPATH = "//div[@id='accept-choices']";
     private static String TUTORIAL_TITLE_XPATH = "//h1/span[text()='Tutorial']";
 
-    public VoidPOW3SchoolPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public W3SchoolPage() {
     }
 
     public void openW3SchoolPage() {

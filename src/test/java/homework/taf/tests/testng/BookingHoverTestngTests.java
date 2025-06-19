@@ -1,14 +1,15 @@
 package homework.taf.tests.testng;
 
+import homework.taf.base.postcondition.TestNGPostcondition;
 import org.testng.annotations.Test;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.pages.booking.BookingSearchPage;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class BookingHoverTestngTests {
+public class BookingHoverTestngTests extends TestNGPostcondition {
     @Test
     public void testHover() {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();

@@ -10,15 +10,13 @@ import homework.taf.driver.Driver;
 import java.time.Duration;
 import java.util.List;
 
-public class VoidPOGoogleSearchPage {
+public class GoogleSearchPage {
     WebDriver driver = Driver.getDriver();
 
     private static String ACCEPT_COOKIES_XPATH = "//div[text()='Принять все']/..";
     private static String SEARCH_NAME = "q";
 
-    public VoidPOGoogleSearchPage() {
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public GoogleSearchPage() {
     }
 
     public void openGoogleSearch() {

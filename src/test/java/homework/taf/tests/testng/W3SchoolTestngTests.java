@@ -1,23 +1,24 @@
 package homework.taf.tests.testng;
 
+import homework.taf.base.postcondition.TestNGPostcondition;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebElement;
-import homework.taf.pages.w3school.VoidPOGoogleSearchPage;
-import homework.taf.pages.w3school.VoidPOW3SchoolPage;
+import homework.taf.pages.w3school.GoogleSearchPage;
+import homework.taf.pages.w3school.W3SchoolPage;
 
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class W3SchoolTestngTests {
+public class W3SchoolTestngTests extends TestNGPostcondition {
     @Test
     public void testW3School() {
-        VoidPOW3SchoolPage mainPage = new VoidPOW3SchoolPage();
+        W3SchoolPage mainPage = new W3SchoolPage();
         mainPage.openW3SchoolPage();
         mainPage.acceptCookies();
         mainPage.copyTitle();
 
-        VoidPOGoogleSearchPage searchPage = new VoidPOGoogleSearchPage();
+        GoogleSearchPage searchPage = new GoogleSearchPage();
         searchPage.openGoogleSearch();
         searchPage.acceptCookies();
         searchPage.search();

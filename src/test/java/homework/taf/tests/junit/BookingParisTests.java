@@ -1,17 +1,19 @@
 package homework.taf.tests.junit;
 
+import homework.taf.base.postcondition.JUnitPostcondition;
+import homework.taf.base.precondition.JUnitPrecondition;
 import org.junit.Test;
-import homework.taf.pages.booking.VoidPOBookingResultsPage;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.pages.booking.BookingResultsPage;
+import homework.taf.pages.booking.BookingSearchPage;
 
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
 
-public class BookingParisTests {
+public class BookingParisTests extends JUnitPostcondition {
     @Test
     public void testParis() {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();
@@ -23,7 +25,7 @@ public class BookingParisTests {
         searchPage.enterRoomNumber(2);
         searchPage.clickSubmit();
 
-        VoidPOBookingResultsPage resultsPage = new VoidPOBookingResultsPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
        // resultsPage.refuseLogIn();
         resultsPage.sortByRatingAsc();
         resultsPage.filterByRatingFive();

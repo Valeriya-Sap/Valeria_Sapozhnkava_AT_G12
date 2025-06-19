@@ -1,4 +1,4 @@
 package homework.taf.steps.cucumber;
 
-public class W3SchoolCucumberTests {
+public class W3SchoolCucumberSteps {
 }

@@ -8,13 +8,13 @@ import homework.taf.driver.Driver;
 
 import java.time.Duration;
 
-public class VoidPOBookingHotelPage {
+public class BookingHotelPage {
     WebDriver driver = Driver.getDriver();
 
     private static String RATING_XPATH = "//div[@data-testid='review-score-right-component']/div[2]";
 
-    public VoidPOBookingHotelPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public BookingHotelPage() {
+
     }
 
     public double getHotelRating() {
@@ -26,4 +26,5 @@ public class VoidPOBookingHotelPage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return number;
     }
+
 }

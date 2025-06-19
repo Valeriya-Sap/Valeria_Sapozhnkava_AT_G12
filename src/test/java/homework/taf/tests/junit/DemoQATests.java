@@ -1,12 +1,14 @@
 package homework.taf.tests.junit;
 
+import homework.taf.base.postcondition.JUnitPostcondition;
+import homework.taf.base.precondition.JUnitPrecondition;
 import org.junit.Test;
-import homework.taf.pages.demoqa.VoidPODemoQAPage;
+import homework.taf.pages.demoqa.DemoQAPage;
 
-public class DemoQATests {
+public class DemoQATests extends JUnitPostcondition {
     @Test
     public void testDemoQA() {
-        VoidPODemoQAPage mainPage = new VoidPODemoQAPage();
+        DemoQAPage mainPage = new DemoQAPage();
         mainPage.openDemoQA();
         mainPage.selectOption();
         mainPage.selectTitle();

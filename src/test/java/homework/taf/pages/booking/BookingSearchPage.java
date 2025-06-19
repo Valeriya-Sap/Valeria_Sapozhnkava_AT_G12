@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class VoidPOBookingSearchPage {
+public class BookingSearchPage {
     WebDriver driver = Driver.getDriver();
     private static String SEARCH_NAME = "ss";
     private static String ACCEPT_XPATH = "//button[text()='Принять']";
@@ -27,8 +27,8 @@ public class VoidPOBookingSearchPage {
     private static String LANGUAGE_PICKER_XPATH = "//button[@data-testid='header-language-picker-trigger']";
     private static String TOOLTIP_XPATH = "//body/div[last()]/div";
 
-    public VoidPOBookingSearchPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public BookingSearchPage() {
+
     }
 
     public void openBooking() {

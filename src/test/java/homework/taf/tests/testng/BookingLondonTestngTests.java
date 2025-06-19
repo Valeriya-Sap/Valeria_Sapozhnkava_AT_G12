@@ -1,20 +1,21 @@
 package homework.taf.tests.testng;
 
+import homework.taf.base.postcondition.TestNGPostcondition;
 import org.apache.commons.io.FileUtils;
 import org.testng.annotations.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import homework.taf.driver.Driver;
-import homework.taf.pages.booking.VoidPOBookingResultsPage;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.pages.booking.BookingResultsPage;
+import homework.taf.pages.booking.BookingSearchPage;
 
 import java.io.File;
 import java.io.IOException;
 
-public class BookingLondonTestngTests {
+public class BookingLondonTestngTests extends TestNGPostcondition {
     @Test
     public void testLondon() throws IOException {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();
@@ -23,7 +24,7 @@ public class BookingLondonTestngTests {
         searchPage.enterRoomNumber(1);
         searchPage.clickSubmit();
 
-        VoidPOBookingResultsPage resultsPage = new VoidPOBookingResultsPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
         resultsPage.scrollToTenHotel();
         resultsPage.beautifyPage();
 //      5. Сделать скриншот

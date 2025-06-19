@@ -1,18 +1,19 @@
 package homework.taf.tests.testng;
 
+import homework.taf.base.postcondition.TestNGPostcondition;
 import org.testng.annotations.Test;
-import homework.taf.pages.booking.VoidPOBookingResultsPage;
-import homework.taf.pages.booking.VoidPOBookingSearchPage;
+import homework.taf.pages.booking.BookingResultsPage;
+import homework.taf.pages.booking.BookingSearchPage;
 
 import java.time.LocalDate;
 
 import static org.testng.AssertJUnit.assertEquals;
 
 
-public class BookingParisTestngTests {
+public class BookingParisTestngTests extends TestNGPostcondition {
     @Test
     public void testParis() {
-        VoidPOBookingSearchPage searchPage = new VoidPOBookingSearchPage();
+        BookingSearchPage searchPage = new BookingSearchPage();
         searchPage.openBooking();
         searchPage.acceptCookies();
         searchPage.refuseLogIn();
@@ -24,7 +25,7 @@ public class BookingParisTestngTests {
         searchPage.enterRoomNumber(2);
         searchPage.clickSubmit();
 
-        VoidPOBookingResultsPage resultsPage = new VoidPOBookingResultsPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
        // resultsPage.refuseLogIn();
         resultsPage.sortByRatingAsc();
         resultsPage.filterByRatingFive();

@@ -6,7 +6,7 @@ import homework.taf.driver.Driver;
 
 import java.time.Duration;
 
-public class VoidPODemoQAPage {
+public class DemoQAPage {
     WebDriver driver = Driver.getDriver();
 
     private static String SELECT_OPTION_XPATH = "//div[text()='Select Option']";
@@ -19,8 +19,8 @@ public class VoidPODemoQAPage {
     private static String OPTION_GREEN_XPATH = "//div[text()='Green']";
     private static String OPTION_VOLVO_XPATH = "//*[text()='Volvo']";
 
-    public VoidPODemoQAPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public DemoQAPage() {
+
     }
 
     public void openDemoQA() {
