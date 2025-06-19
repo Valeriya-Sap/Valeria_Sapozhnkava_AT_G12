@@ -54,7 +54,8 @@ public class DbConnect {
              ResultSet rs = statement.executeQuery(query)) {
 
             while (rs.next()) {
-                System.out.println(rs.getString(1));
+                rs.getMetaData();
+                System.out.println(rs.getString(1) + rs.getString(2));
             }
 
         } catch (SQLException e) {
