@@ -58,6 +58,8 @@ public class BookingParisSelenide {
         $x("//div[@role='listitem'][1]//*[@data-testid='rating-stars']/..")
                 .shouldHave(attribute("aria-label", "5 из 5"));
 
+        closeWebDriver();
+
     }
 
 }
