@@ -21,10 +21,12 @@ public class W3SchoolPage {
 
     public void openW3SchoolPage() {
         driver.get("https://www.w3schools.com/java/");
+        LOGGER.trace("W3schools is opened.");
     }
 
     public void acceptCookies() {
         driver.findElement(By.xpath(ACCEPT_COOKIES_XPATH)).click();
+        LOGGER.trace("Accept cookies.");
     }
 
     public void copyTitle() {
@@ -35,6 +37,7 @@ public class W3SchoolPage {
                 .keyDown(Keys.LEFT_CONTROL)
                 .sendKeys("c")
                 .perform();
+        LOGGER.trace("Title is opened.");
     }
 
 }

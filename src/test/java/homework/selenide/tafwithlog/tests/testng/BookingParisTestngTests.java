@@ -1,0 +1,40 @@
+package homework.selenide.tafwithlog.tests.testng;
+
+import homework.selenide.tafwithlog.base.postcondition.TestNGConditions;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Test;
+import homework.selenide.tafwithlog.pages.booking.BookingResultsPage;
+import homework.selenide.tafwithlog.pages.booking.BookingSearchPage;
+
+import java.time.LocalDate;
+
+import static org.testng.AssertJUnit.assertEquals;
+
+
+public class BookingParisTestngTests extends TestNGConditions {
+    private static final Logger LOGGER = LogManager.getLogger(BookingParisTestngTests.class);
+
+    @Test
+    public void testParis() {
+        BookingSearchPage searchPage = new BookingSearchPage();
+        BookingResultsPage resultsPage = new BookingResultsPage();
+        searchPage.openBooking();
+        searchPage.acceptCookies();
+        searchPage.refuseLogIn();
+        searchPage.enterCity("Париж");
+        LocalDate checkInDate = LocalDate.now().plusDays(3);
+        LocalDate checkOutDate = checkInDate.plusDays(7);
+        searchPage.selectDates(checkInDate, checkOutDate);
+        searchPage.enterAdultsNumber(4);
+        searchPage.enterRoomNumber(2);
+        searchPage.clickSubmit();
+        // resultsPage.refuseLogIn();
+        resultsPage.sortByRatingAsc();
+        resultsPage.filterByRatingFive();
+        String actualRate = resultsPage.getFirstHotelRating();
+        String expectedRate = "5 из 5";
+        assertEquals(expectedRate, actualRate);
+        LOGGER.debug("Test passed");
+    }
+}
